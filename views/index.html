@@ -1,0 +1,63 @@
+{% extends "./layout.html" %} {% block head %} {% parent %}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+  integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY="
+  crossorigin="anonymous"
+></script>
+{% endblock %} {% block body %}
+<!--   <div id="particles"></div> -->
+
+<header class="header siteTopHeader">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/"><h1>Climate Change English</h1></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="siteTopNav collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="smooth-scroll navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#intro">
+            <i class="fas fa-info fa-xs mr-2"></i> What is this ?
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div id="globe">
+  <img
+    src="/img/globe.svg"
+    alt="Goal 13: Climate Action"
+  />
+</div>
+
+<div id="main-container" class="container">
+  <section id="intro" class="card">
+    <h3>
+      Card Title
+    </h3>
+    <p>
+      Content
+      <span class="ethos">Such Credit!</span>
+    </p>
+  </section>
+</div>
+
+<footer class="footer page-footer font-small">
+  <div class="footer-copyright text-center py-3">
+    &copy; 2020 Copyright:&nbsp;<a href="#">Lemuel De Los Santos</a>
+  </div>
+</footer>
+{% endblock %}
