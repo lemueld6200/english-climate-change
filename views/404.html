@@ -1,0 +1,38 @@
+{% extends "./layout.html" %}
+
+{% block head %}
+  {% parent %}
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+    integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY="
+    crossorigin="anonymous"
+  ></script>
+{% endblock %}
+
+{% block body %}
+  <div id="particles"></div>
+
+  <header class="header siteTopHeader">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="/"><h1>CRISPR</h1></a>
+    </nav>
+  </header>
+
+  <div id="main-container" class="container">
+    <section id="404" class="card m-5 p-5">
+      <h1>
+        404
+      </h1>
+      <h3>
+        Site Not Found
+      </h3>
+      <p>
+        Go back to the homepage?
+        
+        <a class="btn btn-primary btn-lg waves-effect" href="/">
+          Go Back
+        </a>
+      </p>
+    </section>
+  </div>
+{% endblock %}

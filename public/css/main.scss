@@ -1,0 +1,158 @@
+@import "_vars";
+
+html,
+body {
+  color: $color;
+ // background: $background;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2225;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2225;
+  
+  &:hover {
+    background: #3335;
+  }
+}
+
+canvas,
+#globe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  user-select: none;
+  margin: 0 auto;
+  position: fixed;
+  text-align: center;
+  z-index: -9999;
+  background-color: #000; // #17182f
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#globe img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.section {
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+  display: block;
+  padding: 14px 16px;
+  background-color: black;
+}
+
+.header,
+.footer {
+  background: #000E;
+}
+
+#textSwapper {
+  color: $primary;
+  display: inline-block;
+}
+
+#main-container {
+  margin: 10px auto;
+}
+
+.card {
+  background: #333A;  
+  padding: 20px;
+  // background-color: black;
+  margin: 5px 0;
+//  height: 80vh;
+}
+
+a { 
+  text-decoration: none; 
+  color: $primary;
+  &:hover { 
+    text-decoration: underline; 
+  } 
+}
+
+p {
+  display: inline-block;  
+  font-size: 20px;
+}
+
+.siteTop {
+  display: flex;
+  padding-bottom: 10px;
+  background-color: black; 
+  margin-bottom: 25px;
+  color: $primary;
+
+}
+.siteTopHeader {
+  h1 {
+    margin: 0;
+    color: $primary;
+  }
+}
+.siteTopNav {
+  li {
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 20px; 
+    font-size: 150%;
+    
+    a {
+      text-decoration: inherit;
+
+      &:hover {
+        color: $primary !important;
+      }
+    }
+  }
+}
+
+.btn {
+  width: 100%;
+  background-color: $primary;
+  color: white;
+}
+
+hr {
+  background-color: white;
+}
+
+.logos, .pathos, .ethos {
+  transition: 0.3s;
+
+  &::before, &::after {
+    content: "\00a0";
+  }
+}
+
+.logos {
+  &:hover {
+    background: $logos;
+  }
+}
+.pathos {
+  &:hover {
+    background: $pathos;
+  }
+}
+.ethos {
+  &:hover {
+    background: $ethos;
+  }
+}
