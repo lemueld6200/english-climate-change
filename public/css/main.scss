@@ -1,10 +1,22 @@
 @import "_vars";
 
+@keyframes bounce {
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 html,
 body {
   color: $color;
- // background: $background;
+  // background: $background;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-padding: 1rem;
+  // scroll-snap-align: start;
 }
 
 ::-webkit-scrollbar {
@@ -12,19 +24,38 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2225;
+  background: #111;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2225;
-  
+  background: #3335;
+
   &:hover {
-    background: #3335;
+    background: #333;
   }
 }
 
 canvas,
 #globe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  z-index: -1;
+  user-select: none;
+  margin: 0 auto;
+  position: fixed;
+  text-align: center;
+}
+#globe img {
+  width: 100vh;
+  height: 75vh;
+  transition: all 1s;
+  user-select: none;
+  margin: 5% auto;
+}
+.particles-js-canvas-el {
   top: 0;
   left: 0;
   width: 100%;
@@ -36,16 +67,30 @@ canvas,
   text-align: center;
   z-index: -9999;
   background-color: #000; // #17182f
-  background-image: url("");
+  // background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
 }
-#globe img {
-  width: 100%;
-  height: 100%;
-}
 
+.top-panel {
+  &::before {
+    content: "╲╱";
+    color: #fff;
+    position: absolute;
+    opacity: 0.8;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    width: 3rem;
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    bottom: -3rem;
+    margin-left: -1.5rem;
+    left: 50%;
+    animation: bounce 1s ease infinite;
+  }
+}
 
 .section {
   width: 100%;
@@ -58,7 +103,7 @@ canvas,
 
 .header,
 .footer {
-  background: #000E;
+  background: #000e;
 }
 
 #textSwapper {
@@ -71,38 +116,39 @@ canvas,
 }
 
 .card {
-  background: #333A;  
+  background: #333a;
   padding: 20px;
   // background-color: black;
   margin: 5px 0;
-//  height: 80vh;
+  //  height: 80vh;
+  scroll-snap-align: start;
 }
 
-a { 
-  text-decoration: none; 
+a {
+  text-decoration: none;
   color: $primary;
-  &:hover { 
-    text-decoration: underline; 
-  } 
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p {
-  display: inline-block;  
+  display: inline-block;
   font-size: 20px;
 }
 
 .siteTop {
   display: flex;
   padding-bottom: 10px;
-  background-color: black; 
+  background-color: black;
   margin-bottom: 25px;
   color: $primary;
-
 }
 .siteTopHeader {
   h1 {
     margin: 0;
-    color: $primary;
+    font-weight: bolder;
+    // color: $primary;
   }
 }
 .siteTopNav {
@@ -110,15 +156,15 @@ p {
     display: inline;
     vertical-align: middle;
     text-decoration: none;
-    margin: 20px; 
+    margin: 20px;
     font-size: 150%;
-    
+
     a {
       text-decoration: inherit;
 
-      &:hover {
-        color: $primary !important;
-      }
+      // &:hover {
+      //   color: $primary !important;
+      // }
     }
   }
 }
@@ -133,26 +179,92 @@ hr {
   background-color: white;
 }
 
-.logos, .pathos, .ethos {
+.logos,
+.pathos,
+.ethos {
   transition: 0.3s;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: "\00a0";
+    background-color: transparent !important;
   }
 }
 
 .logos {
+  .active,
   &:hover {
-    background: $logos;
+    background-color: $logos;
   }
 }
 .pathos {
+  .active,
   &:hover {
-    background: $pathos;
+    background-color: $pathos;
   }
 }
 .ethos {
+  .active,
   &:hover {
-    background: $ethos;
+    background-color: $ethos;
+  }
+}
+
+table {
+  display: block;
+  margin: 5% auto;
+  width: 75% !important;
+
+  th {
+    &.h4 {
+      scroll-snap-align: start;
+    }
+  }
+
+  tbody tr td {
+    width: 25%;
+  }
+
+  &.black {
+    background: #333333aa !important;
+  }
+}
+
+#intro-header {
+  scroll-snap-align: start;
+}
+#intro-welcome {
+  width: 60%;
+}
+
+.globe-space {
+  height: 90vh;
+  display: block;
+  scroll-snap-align: start;
+}
+
+#globe-space {
+  display: none;
+  // height: 100vh;
+}
+
+#dogecoin {
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+  position: absolute;
+  transition: all 3s;
+
+  &.active {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #globe img {
+    width: 80%;
   }
 }

@@ -29,13 +29,13 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^6.0.1",
     "precss": "^4.0.0",
-    "stylelint": "^13.0.0",
+    "socket.io": "^2.3.0",
+    "stylelint": "^13.2.1",
     "stylelint-config-standard": "^19.0.0",
     "swig-extras": "^0.0.1",
     "swig-templates": "^2.0.3",
     "uglify-js": "^3.7.5",
-    "workbox-build": "^4.3.1",
-    "socket.io": "^2.3.0"
+    "workbox-build": "^4.3.1"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
@@ -44,8 +44,8 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.19.1",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "prettier": "^1.19.1"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
@@ -54,7 +54,7 @@
       "string-quotes": "double",
       "color-hex-case": "lower",
       "color-hex-length": "long",
-      "selector-no-qualifying-type": true,
+      "selector-no-qualifying-type": false,
       "selector-combinator-space-after": "always",
       "selector-attribute-operator-space-before": "always",
       "selector-attribute-operator-space-after": "always",
