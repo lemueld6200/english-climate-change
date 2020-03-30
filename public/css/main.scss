@@ -51,7 +51,7 @@ canvas,
 #globe img {
   width: 100vh;
   height: 75vh;
-  transition: all 1s;
+  transition: all 5s;
   user-select: none;
   margin: 5% auto;
 }
@@ -116,12 +116,18 @@ canvas,
 }
 
 .card {
+  transition: all 1s;
   background: #333a;
   padding: 20px;
   // background-color: black;
   margin: 5px 0;
   //  height: 80vh;
   scroll-snap-align: start;
+
+  &:target {
+    background: #333e;
+    box-shadow: -1px 2px 2px black;
+  }
 }
 
 a {

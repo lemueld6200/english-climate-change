@@ -10,6 +10,7 @@ let isCooldown = false;
 let cooldown = setTimeout(() => {
   isCooldown = false;
 });
+
 function setCooldown() {
   clearTimeout(cooldown);
   isCooldown = true;
@@ -103,6 +104,8 @@ function newCanvasFromImageData(imageDataArray, w, h) {
 $(() => {
   setActive(window.location.hash);
 
+  $("img").each((i, o) => o.alt = (o.title = o.title || o.alt));
+
   $(".close").click(function() {
     $(this)
       .parent()
@@ -134,11 +137,11 @@ $(() => {
   });
 
   setInterval(() => {
-    //   if (spin)
-    $("#globe img").css({
-      filter: `invert(${Math.max(scrolled / 1.75 - 10, 0)}%)`,
-      transform: `rotate(${scrolled / 4 + (r += 25 / (scrolled + 1))}deg)`
-    });
+    if (spin)
+      $("#globe img").css({
+        filter: `invert(${Math.max(scrolled / 1.5 - 10, 0)}%)`,
+        transform: `rotate(${scrolled / 4 + (r += 25 / (scrolled + 1))}deg)`
+      });
     // else
     //   $("#globe img").css({
     //     background: "#ff0000",
@@ -338,7 +341,8 @@ $(() => {
     });
     setTimeout(() => {
       $(document.body).append(
-        $(document.createElement("div"))
+        $(document.createElement("div")).append(
+        $(document.createElement("span"))
           .text("+1")
           .css({
             fontSize: "32px",
@@ -346,7 +350,7 @@ $(() => {
             userSelect: "none",
             top: coin.offset().top + Math.random() * (coin.height() / 1.5),
             left: coin.offset().left + Math.random() * (coin.width() / 1.5)
-          })
+          }))
           .fadeOut("slow")
       );
     }, 1000);
